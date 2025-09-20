@@ -1,0 +1,102 @@
+[
+  {
+    "_id": "507f1f77bcf86cd799439031",
+    "title": "Introduction to Web Development",
+    "description": "Get started with web development fundamentals and overview of the course structure.",
+    "course": "507f1f77bcf86cd799439021",
+    "section": "HTML & CSS Fundamentals",
+    "order": 1,
+    "type": "text",
+    "content": {
+      "text": {
+        "body": "Welcome to the Complete Web Development Bootcamp! In this course, you'll learn everything you need to become a full-stack web developer.",
+        "estimatedReadTime": 5
+      }
+    },
+    "duration": 5,
+    "isPreview": true,
+    "isFree": true,
+    "isPublished": true,
+    "publishedAt": "2024-01-15T10:00:00.000Z"
+  },
+  {
+    "_id": "507f1f77bcf86cd799439032",
+    "title": "HTML Basics and Structure",
+    "description": "Learn HTML fundamentals, tags, and document structure.",
+    "course": "507f1f77bcf86cd799439021",
+    "section": "HTML & CSS Fundamentals",
+    "order": 2,
+    "type": "text",
+    "content": {
+      "text": {
+        "body": "HTML (HyperText Markup Language) is the foundation of all web pages. Learn the basic tags and structure.",
+        "estimatedReadTime": 10
+      }
+    },
+    "duration": 10,
+    "isPreview": false,
+    "isFree": false,
+    "isPublished": true,
+    "publishedAt": "2024-01-15T10:30:00.000Z"
+  },
+  {
+    "_id": "507f1f77bcf86cd799439033",
+    "title": "CSS Styling and Layouts",
+    "description": "Master CSS for styling web pages and creating responsive layouts.",
+    "course": "507f1f77bcf86cd799439021",
+    "section": "HTML & CSS Fundamentals",
+    "order": 3,
+    "type": "text",
+    "content": {
+      "text": {
+        "body": "CSS (Cascading Style Sheets) is used to style and layout web pages. Learn selectors, properties, and layout techniques.",
+        "estimatedReadTime": 15
+      }
+    },
+    "duration": 15,
+    "isPreview": false,
+    "isFree": false,
+    "isPublished": true,
+    "publishedAt": "2024-01-15T11:00:00.000Z"
+  },
+  {
+    "_id": "507f1f77bcf86cd799439034",
+    "title": "JavaScript Fundamentals",
+    "description": "Learn JavaScript basics including variables, functions, and control structures.",
+    "course": "507f1f77bcf86cd799439021",
+    "section": "JavaScript Essentials",
+    "order": 1,
+    "type": "text",
+    "content": {
+      "text": {
+        "body": "JavaScript is the programming language of the web. Learn variables, functions, and control structures.",
+        "estimatedReadTime": 20
+      }
+    },
+    "duration": 20,
+    "isPreview": true,
+    "isFree": false,
+    "isPublished": true,
+    "publishedAt": "2024-01-16T10:00:00.000Z"
+  },
+  {
+    "_id": "507f1f77bcf86cd799439035",
+    "title": "Introduction to Data Science",
+    "description": "Overview of data science, its applications, and the tools we'll use throughout the course.",
+    "course": "507f1f77bcf86cd799439022",
+    "section": "Python for Data Science",
+    "order": 1,
+    "type": "text",
+    "content": {
+      "text": {
+        "body": "Data Science is an interdisciplinary field that uses scientific methods to extract insights from data.",
+        "estimatedReadTime": 12
+      }
+    },
+    "duration": 12,
+    "isPreview": true,
+    "isFree": true,
+    "isPublished": true,
+    "publishedAt": "2024-02-01T10:00:00.000Z"
+  }
+]

@@ -1,0 +1,155 @@
+[
+  {
+    "_id": "507f1f77bcf86cd799439051",
+    "student": "507f1f77bcf86cd799439014",
+    "course": "507f1f77bcf86cd799439021",
+    "enrollmentDate": "2024-01-20T14:30:00.000Z",
+    "status": "active",
+    "progress": {
+      "completedLessons": [
+        {
+          "lesson": "507f1f77bcf86cd799439031",
+          "completedAt": "2024-01-21T10:15:00.000Z",
+          "watchTime": 900,
+          "score": null
+        },
+        {
+          "lesson": "507f1f77bcf86cd799439032",
+          "completedAt": "2024-01-22T15:30:00.000Z",
+          "watchTime": 1200,
+          "score": null
+        }
+      ],
+      "currentLesson": "507f1f77bcf86cd799439033",
+      "completionPercentage": 15,
+      "totalWatchTime": 2100,
+      "lastAccessedAt": "2024-01-23T09:00:00.000Z"
+    },
+    "paymentStatus": "completed",
+    "paymentDetails": {
+      "amount": 99.99,
+      "currency": "USD",
+      "paymentMethod": "credit_card",
+      "transactionId": "txn_1234567890",
+      "paidAt": "2024-01-20T14:25:00.000Z"
+    },
+    "certificate": {
+      "isEligible": false,
+      "issuedAt": null,
+      "certificateId": null
+    }
+  },
+  {
+    "_id": "507f1f77bcf86cd799439052",
+    "student": "507f1f77bcf86cd799439015",
+    "course": "507f1f77bcf86cd799439021",
+    "enrollmentDate": "2024-01-18T11:20:00.000Z",
+    "status": "active",
+    "progress": {
+      "completedLessons": [
+        {
+          "lesson": "507f1f77bcf86cd799439031",
+          "completedAt": "2024-01-19T16:45:00.000Z",
+          "watchTime": 900,
+          "score": null
+        },
+        {
+          "lesson": "507f1f77bcf86cd799439032",
+          "completedAt": "2024-01-20T10:30:00.000Z",
+          "watchTime": 1150,
+          "score": null
+        },
+        {
+          "lesson": "507f1f77bcf86cd799439033",
+          "completedAt": "2024-01-21T14:15:00.000Z",
+          "watchTime": 1500,
+          "score": null
+        },
+        {
+          "lesson": "507f1f77bcf86cd799439034",
+          "completedAt": "2024-01-22T12:00:00.000Z",
+          "watchTime": 1750,
+          "score": 85
+        }
+      ],
+      "currentLesson": "507f1f77bcf86cd799439034",
+      "completionPercentage": 25,
+      "totalWatchTime": 5300,
+      "lastAccessedAt": "2024-01-23T11:30:00.000Z"
+    },
+    "paymentStatus": "completed",
+    "paymentDetails": {
+      "amount": 99.99,
+      "currency": "USD",
+      "paymentMethod": "paypal",
+      "transactionId": "txn_0987654321",
+      "paidAt": "2024-01-18T11:15:00.000Z"
+    },
+    "certificate": {
+      "isEligible": false,
+      "issuedAt": null,
+      "certificateId": null
+    }
+  },
+  {
+    "_id": "507f1f77bcf86cd799439053",
+    "student": "507f1f77bcf86cd799439014",
+    "course": "507f1f77bcf86cd799439022",
+    "enrollmentDate": "2024-02-05T09:15:00.000Z",
+    "status": "active",
+    "progress": {
+      "completedLessons": [
+        {
+          "lesson": "507f1f77bcf86cd799439035",
+          "completedAt": "2024-02-06T13:20:00.000Z",
+          "watchTime": 1200,
+          "score": null
+        }
+      ],
+      "currentLesson": "507f1f77bcf86cd799439035",
+      "completionPercentage": 5,
+      "totalWatchTime": 1200,
+      "lastAccessedAt": "2024-02-07T08:45:00.000Z"
+    },
+    "paymentStatus": "completed",
+    "paymentDetails": {
+      "amount": 129.99,
+      "currency": "USD",
+      "paymentMethod": "credit_card",
+      "transactionId": "txn_1122334455",
+      "paidAt": "2024-02-05T09:10:00.000Z"
+    },
+    "certificate": {
+      "isEligible": false,
+      "issuedAt": null,
+      "certificateId": null
+    }
+  },
+  {
+    "_id": "507f1f77bcf86cd799439054",
+    "student": "507f1f77bcf86cd799439015",
+    "course": "507f1f77bcf86cd799439023",
+    "enrollmentDate": "2024-02-18T16:00:00.000Z",
+    "status": "active",
+    "progress": {
+      "completedLessons": [],
+      "currentLesson": null,
+      "completionPercentage": 0,
+      "totalWatchTime": 0,
+      "lastAccessedAt": "2024-02-18T16:00:00.000Z"
+    },
+    "paymentStatus": "completed",
+    "paymentDetails": {
+      "amount": 89.99,
+      "currency": "USD",
+      "paymentMethod": "credit_card",
+      "transactionId": "txn_5566778899",
+      "paidAt": "2024-02-18T15:55:00.000Z"
+    },
+    "certificate": {
+      "isEligible": false,
+      "issuedAt": null,
+      "certificateId": null
+    }
+  }
+]

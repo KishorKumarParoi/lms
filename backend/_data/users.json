@@ -1,0 +1,115 @@
+[
+  {
+    "_id": "507f1f77bcf86cd799439011",
+    "firstName": "John",
+    "lastName": "Doe",
+    "email": "admin@lms.com",
+    "password": "123456",
+    "role": "admin",
+    "isEmailVerified": true,
+    "avatar": {
+      "public_id": "avatar1",
+      "url": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400"
+    },
+    "bio": "System Administrator with 10+ years of experience in educational technology.",
+    "skills": [
+      "System Administration",
+      "Educational Technology",
+      "Database Management"
+    ],
+    "socialLinks": {
+      "linkedin": "https://linkedin.com/in/johndoe",
+      "twitter": "https://twitter.com/johndoe"
+    }
+  },
+  {
+    "_id": "507f1f77bcf86cd799439012",
+    "firstName": "Sarah",
+    "lastName": "Johnson",
+    "email": "instructor@lms.com",
+    "password": "123456",
+    "role": "instructor",
+    "isEmailVerified": true,
+    "avatar": {
+      "public_id": "avatar2",
+      "url": "https://images.unsplash.com/photo-1494790108755-2616b612b193?w=400"
+    },
+    "bio": "Full-stack developer and educator with expertise in modern web technologies.",
+    "skills": ["JavaScript", "React", "Node.js", "MongoDB", "Teaching"],
+    "socialLinks": {
+      "linkedin": "https://linkedin.com/in/sarahjohnson",
+      "github": "https://github.com/sarahjohnson",
+      "website": "https://sarahjohnson.dev"
+    },
+    "experience": [
+      {
+        "company": "Tech Education Inc.",
+        "position": "Senior Instructor",
+        "duration": "2020-Present",
+        "description": "Teaching modern web development to 1000+ students"
+      }
+    ]
+  },
+  {
+    "_id": "507f1f77bcf86cd799439013",
+    "firstName": "Mike",
+    "lastName": "Chen",
+    "email": "instructor2@lms.com",
+    "password": "123456",
+    "role": "instructor",
+    "isEmailVerified": true,
+    "avatar": {
+      "public_id": "avatar3",
+      "url": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400"
+    },
+    "bio": "Data Science expert with PhD in Machine Learning and 5+ years teaching experience.",
+    "skills": [
+      "Python",
+      "Machine Learning",
+      "Data Science",
+      "Statistics",
+      "Teaching"
+    ],
+    "socialLinks": {
+      "linkedin": "https://linkedin.com/in/mikechen",
+      "github": "https://github.com/mikechen"
+    }
+  },
+  {
+    "_id": "507f1f77bcf86cd799439014",
+    "firstName": "Emily",
+    "lastName": "Davis",
+    "email": "student@lms.com",
+    "password": "123456",
+    "role": "student",
+    "isEmailVerified": true,
+    "avatar": {
+      "public_id": "avatar4",
+      "url": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400"
+    },
+    "bio": "Computer Science student passionate about web development and machine learning.",
+    "skills": ["HTML", "CSS", "JavaScript", "Python"],
+    "socialLinks": {
+      "linkedin": "https://linkedin.com/in/emilydavis",
+      "github": "https://github.com/emilydavis"
+    }
+  },
+  {
+    "_id": "507f1f77bcf86cd799439015",
+    "firstName": "Alex",
+    "lastName": "Wilson",
+    "email": "student2@lms.com",
+    "password": "123456",
+    "role": "student",
+    "isEmailVerified": true,
+    "avatar": {
+      "public_id": "avatar5",
+      "url": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400"
+    },
+    "bio": "Marketing professional looking to transition into tech through online learning.",
+    "skills": ["Marketing", "Communication", "Project Management"],
+    "socialLinks": {
+      "linkedin": "https://linkedin.com/in/alexwilson"
+    }
+  }
+]

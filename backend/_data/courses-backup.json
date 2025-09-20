@@ -1,0 +1,229 @@
+[
+  {
+    "_id": "507f1f77bcf86cd799439021",
+    "title": "Complete Web Development Bootcamp",
+    "slug": "complete-web-development-bootcamp",
+    "description": "Learn full-stack web development from scratch. This comprehensive course covers HTML, CSS, JavaScript, React, Node.js, and MongoDB. Build real-world projects and get job-ready skills.",
+    "shortDescription": "Master full-stack web development with hands-on projects",
+    "instructor": "507f1f77bcf86cd799439012",
+    "category": "Web Development",
+    "level": "Beginner",
+    "language": "English",
+    "price": 99.99,
+    "originalPrice": 199.99,
+    "duration": 40,
+    "thumbnail": {
+      "public_id": "course1",
+      "url": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800"
+    },
+    "tags": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "React",
+      "Node.js",
+      "MongoDB",
+      "Full Stack"
+    ],
+    "learningOutcomes": [
+      "Build responsive websites with HTML, CSS, and JavaScript",
+      "Create dynamic web applications with React",
+      "Develop backend APIs with Node.js and Express",
+      "Work with MongoDB databases",
+      "Deploy applications to production",
+      "Understand modern web development best practices"
+    ],
+    "requirements": [
+      "Basic computer skills",
+      "No programming experience required",
+      "Access to a computer with internet connection"
+    ],
+    "sections": [
+      {
+        "title": "HTML & CSS Fundamentals",
+        "lessons": 8,
+        "duration": 120
+      },
+      {
+        "title": "JavaScript Essentials",
+        "lessons": 12,
+        "duration": 180
+      },
+      {
+        "title": "React Development",
+        "lessons": 15,
+        "duration": 240
+      },
+      {
+        "title": "Backend with Node.js",
+        "lessons": 10,
+        "duration": 150
+      },
+      {
+        "title": "Database & MongoDB",
+        "lessons": 8,
+        "duration": 120
+      },
+      {
+        "title": "Deployment & Production",
+        "lessons": 5,
+        "duration": 90
+      }
+    ],
+    "isPublished": true,
+    "publishedAt": "2024-01-15T10:00:00.000Z",
+    "averageRating": 4.8,
+    "totalRatings": 127,
+    "totalStudents": 1250,
+    "totalLessons": 58,
+    "totalDuration": 900,
+    "isFeatured": true
+  },
+  {
+    "_id": "507f1f77bcf86cd799439022",
+    "title": "Data Science with Python",
+    "slug": "data-science-with-python",
+    "description": "Comprehensive data science course covering Python programming, data analysis, machine learning, and data visualization. Learn to work with real datasets and build predictive models.",
+    "shortDescription": "Master data science and machine learning with Python",
+    "instructor": "507f1f77bcf86cd799439013",
+    "category": "Data Science",
+    "level": "Intermediate",
+    "language": "English",
+    "price": 129.99,
+    "originalPrice": 249.99,
+    "duration": 35,
+    "thumbnail": {
+      "public_id": "course2",
+      "url": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800"
+    },
+    "tags": [
+      "Python",
+      "Data Science",
+      "Machine Learning",
+      "Pandas",
+      "NumPy",
+      "Scikit-learn"
+    ],
+    "learningOutcomes": [
+      "Master Python programming for data science",
+      "Analyze and visualize data with Pandas and Matplotlib",
+      "Build machine learning models with Scikit-learn",
+      "Work with real-world datasets",
+      "Understand statistical concepts for data science",
+      "Deploy machine learning models"
+    ],
+    "requirements": [
+      "Basic programming knowledge helpful but not required",
+      "High school level mathematics",
+      "Python installation (guidance provided)"
+    ],
+    "sections": [
+      {
+        "title": "Python for Data Science",
+        "lessons": 10,
+        "duration": 150
+      },
+      {
+        "title": "Data Analysis with Pandas",
+        "lessons": 12,
+        "duration": 180
+      },
+      {
+        "title": "Data Visualization",
+        "lessons": 8,
+        "duration": 120
+      },
+      {
+        "title": "Machine Learning Basics",
+        "lessons": 15,
+        "duration": 250
+      },
+      {
+        "title": "Advanced ML Techniques",
+        "lessons": 10,
+        "duration": 180
+      }
+    ],
+    "isPublished": true,
+    "publishedAt": "2024-02-01T10:00:00.000Z",
+    "averageRating": 4.7,
+    "totalRatings": 89,
+    "totalStudents": 850,
+    "totalLessons": 55,
+    "totalDuration": 880,
+    "isFeatured": true
+  },
+  {
+    "_id": "507f1f77bcf86cd799439023",
+    "title": "Mobile App Development with React Native",
+    "slug": "mobile-app-development-react-native",
+    "description": "Build cross-platform mobile applications for iOS and Android using React Native. Learn to create beautiful, native mobile apps with a single codebase.",
+    "shortDescription": "Create mobile apps for iOS and Android with React Native",
+    "instructor": "507f1f77bcf86cd799439012",
+    "category": "Mobile Development",
+    "level": "Intermediate",
+    "language": "English",
+    "price": 89.99,
+    "originalPrice": 169.99,
+    "duration": 28,
+    "thumbnail": {
+      "public_id": "course3",
+      "url": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800"
+    },
+    "tags": [
+      "React Native",
+      "Mobile Development",
+      "iOS",
+      "Android",
+      "JavaScript"
+    ],
+    "learningOutcomes": [
+      "Build mobile apps for iOS and Android",
+      "Master React Native framework",
+      "Implement navigation and state management",
+      "Work with device features like camera and GPS",
+      "Publish apps to App Store and Google Play",
+      "Integrate with backend APIs"
+    ],
+    "requirements": [
+      "Basic knowledge of React and JavaScript",
+      "Understanding of mobile development concepts helpful",
+      "Mac required for iOS development"
+    ],
+    "sections": [
+      {
+        "title": "React Native Fundamentals",
+        "lessons": 8,
+        "duration": 120
+      },
+      {
+        "title": "Building User Interfaces",
+        "lessons": 10,
+        "duration": 150
+      },
+      {
+        "title": "Navigation & State Management",
+        "lessons": 8,
+        "duration": 120
+      },
+      {
+        "title": "Device Features & APIs",
+        "lessons": 12,
+        "duration": 180
+      },
+      {
+        "title": "Publishing & Deployment",
+        "lessons": 5,
+        "duration": 90
+      }
+    ],
+    "isPublished": true,
+    "publishedAt": "2024-02-15T10:00:00.000Z",
+    "averageRating": 4.6,
+    "totalRatings": 64,
+    "totalStudents": 420,
+    "totalLessons": 43,
+    "totalDuration": 660,
+    "isFeatured": false
+  }
+]

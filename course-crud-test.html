@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LMS Course CRUD Operations</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            opacity: 0.9;
+            font-size: 1.1em;
+        }
+
+        .content {
+            padding: 30px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+            padding: 25px;
+            border: 2px solid #f0f0f0;
+            border-radius: 10px;
+            background: #fafafa;
+        }
+
+        .section h2 {
+            color: #333;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+            display: inline-block;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            min-width: 120px;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        .delete-btn {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+        }
+
+        .update-btn {
+            background: linear-gradient(135deg, #feca57 0%, #ff9f43 100%);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: border-color 0.3s ease;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 20px;
+        }
+
+        .form-row .form-group {
+            flex: 1;
+        }
+
+        #output {
+            background: #1a1a1a;
+            color: #00ff00;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            line-height: 1.6;
+            max-height: 400px;
+            overflow-y: auto;
+            margin-top: 20px;
+            white-space: pre-wrap;
+        }
+
+        .success {
+            color: #00ff00;
+        }
+
+        .error {
+            color: #ff6b6b;
+        }
+
+        .info {
+            color: #54a3ff;
+        }
+
+        .warning {
+            color: #feca57;
+        }
+
+        .course-card {
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .course-card:hover {
+            border-color: #667eea;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .course-title {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .course-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .course-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 30px;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 600px;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            line-height: 1;
+        }
+
+        .close:hover {
+            color: #000;
+        }
+
+        .status-indicator {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+
+        .status-online {
+            background: #00ff00;
+        }
+
+        .status-offline {
+            background: #ff6b6b;
+        }
+
+        @media (max-width: 768px) {
+            .form-row {
+                flex-direction: column;
+            }
+
+            .button-group {
+                flex-direction: column;
+            }
+
+            button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎓 LMS Course Management</h1>
+            <p>Complete CRUD Operations for Course Management System</p>
+            <p id="api-status">
+                <span class="status-indicator status-offline"></span>
+                Checking API connection...
+            </p>
+        </div>
+
+        <div class="content">
+            <!-- System Status Section -->
+            <div class="section">
+                <h2>🔍 System Status</h2>
+                <div class="button-group">
+                    <button onclick="checkApiStatus()">Check API Status</button>
+                    <button onclick="seedDatabase()">Seed Sample Data</button>
+                    <button onclick="clearOutput()">Clear Console</button>
+                </div>
+            </div>
+
+            <!-- Read Operations -->
+            <div class="section">
+                <h2>📚 View Courses</h2>
+                <div class="button-group">
+                    <button onclick="getAllCourses()">Get All Courses</button>
+                    <button onclick="showCourseById()">Get Course by ID</button>
+                    <button onclick="getInstructors()">Get All Instructors</button>
+                </div>
+                <div id="courses-display"></div>
+            </div>
+
+            <!-- Create Operations -->
+            <div class="section">
+                <h2>➕ Create Course</h2>
+                <form id="create-course-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="title">Course Title *</label>
+                            <input type="text" id="title" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="instructor">Instructor *</label>
+                            <select id="instructor" required>
+                                <option value="">Select Instructor</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="description">Description *</label>
+                        <textarea id="description" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="shortDescription">Short Description</label>
+                        <input type="text" id="shortDescription">
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="category">Category</label>
+                            <select id="category">
+                                <option value="">Select Category</option>
+                                <option value="Web Development">Web Development</option>
+                                <option value="Data Science">Data Science</option>
+                                <option value="Mobile Development">Mobile Development</option>
+                                <option value="DevOps">DevOps</option>
+                                <option value="AI/ML">AI/ML</option>
+                                <option value="Cybersecurity">Cybersecurity</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="level">Level</label>
+                            <select id="level">
+                                <option value="">Select Level</option>
+                                <option value="beginner">Beginner</option>
+                                <option value="intermediate">Intermediate</option>
+                                <option value="advanced">Advanced</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="price">Price ($)</label>
+                            <input type="number" id="price" step="0.01" min="0">
+                        </div>
+                        <div class="form-group">
+                            <label for="discountPrice">Discount Price ($)</label>
+                            <input type="number" id="discountPrice" step="0.01" min="0">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="language">Language</label>
+                            <input type="text" id="language" value="English">
+                        </div>
+                        <div class="form-group">
+                            <label for="duration">Duration (hours)</label>
+                            <input type="number" id="duration" min="1">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="tags">Tags (comma-separated)</label>
+                        <input type="text" id="tags" placeholder="javascript, react, frontend">
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>
+                                <input type="checkbox" id="isPublished"> Published
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label>
+                                <input type="checkbox" id="isFeatured"> Featured
+                            </label>
+                        </div>
+                    </div>
+
+                    <button type="submit">Create Course</button>
+                </form>
+            </div>
+
+            <!-- Console Output -->
+            <div class="section">
+                <h2>🖥️ Console Output</h2>
+                <div id="output">Ready to execute CRUD operations...</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Update Course Modal -->
+    <div id="updateModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>✏️ Update Course</h2>
+            <form id="update-course-form">
+                <input type="hidden" id="update-course-id">
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="update-title">Course Title *</label>
+                        <input type="text" id="update-title" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="update-instructor">Instructor</label>
+                        <select id="update-instructor">
+                            <option value="">Select Instructor</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="update-description">Description</label>
+                    <textarea id="update-description"></textarea>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="update-price">Price ($)</label>
+                        <input type="number" id="update-price" step="0.01" min="0">
+                    </div>
+                    <div class="form-group">
+                        <label for="update-level">Level</label>
+                        <select id="update-level">
+                            <option value="">Select Level</option>
+                            <option value="beginner">Beginner</option>
+                            <option value="intermediate">Intermediate</option>
+                            <option value="advanced">Advanced</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button type="submit" class="update-btn">Update Course</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const API_BASE = 'http://localhost:5001/api';
+        let instructors = [];
+        let courses = [];
+
+        // Utility function to log output
+        function logOutput(message, type = 'info') {
+            const output = document.getElementById('output');
+            const timestamp = new Date().toLocaleTimeString();
+            const colorClass = type;
+
+            const logEntry = `[${timestamp}] ${message}\n`;
+            output.innerHTML += `<span class="${colorClass}">${logEntry}</span>`;
+            output.scrollTop = output.scrollHeight;
+        }
+
+        function clearOutput() {
+            document.getElementById('output').innerHTML = 'Console cleared...\n';
+        }
+
+        // Update API status indicator
+        function updateApiStatus(isOnline) {
+            const statusElement = document.getElementById('api-status');
+            const indicator = statusElement.querySelector('.status-indicator');
+
+            if (isOnline) {
+                indicator.className = 'status-indicator status-online';
+                statusElement.innerHTML = '<span class="status-indicator status-online"></span>API Connected ✅';
+            } else {
+                indicator.className = 'status-indicator status-offline';
+                statusElement.innerHTML = '<span class="status-indicator status-offline"></span>API Disconnected ❌';
+            }
+        }
+
+        // Check API Status
+        async function checkApiStatus() {
+            logOutput('🔍 Checking API status...', 'info');
+
+            try {
+                const response = await fetch(`${API_BASE}/health`, {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    }
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    logOutput('✅ API Status: Connected', 'success');
+                    logOutput(`📊 API Response: ${JSON.stringify(data, null, 2)}`, 'success');
+                    updateApiStatus(true);
+
+                    // Load instructors when API is connected
+                    await loadInstructors();
+                } else {
+                    logOutput(`❌ API Status: Failed (${response.status})`, 'error');
+                    updateApiStatus(false);
+                }
+            } catch (error) {
+                logOutput(`❌ API Connection Failed: ${error.message}`, 'error');
+                logOutput('💡 Make sure backend server is running on http://localhost:5001', 'warning');
+                updateApiStatus(false);
+            }
+        }
+
+        // Load instructors for dropdowns
+        async function loadInstructors() {
+            try {
+                const response = await fetch(`${API_BASE}/users?role=instructor`);
+                if (response.ok) {
+                    const data = await response.json();
+                    instructors = data.data || [];
+                    populateInstructorDropdowns();
+                }
+            } catch (error) {
+                logOutput(`❌ Failed to load instructors: ${error.message}`, 'error');
+            }
+        }
+
+        function populateInstructorDropdowns() {
+            const dropdowns = ['instructor', 'update-instructor'];
+
+            dropdowns.forEach(dropdownId => {
+                const dropdown = document.getElementById(dropdownId);
+                dropdown.innerHTML = '<option value="">Select Instructor</option>';
+
+                instructors.forEach(instructor => {
+                    const option = document.createElement('option');
+                    option.value = instructor._id;
+                    option.textContent = `${instructor.name} (${instructor.email})`;
+                    dropdown.appendChild(option);
+                });
+            });
+        }
+
+        // Get all instructors
+        async function getInstructors() {
+            logOutput('👥 Fetching all instructors...', 'info');
+
+            try {
+                const response = await fetch(`${API_BASE}/users?role=instructor`);
+                const data = await response.json();
+
+                if (response.ok) {
+                    logOutput('✅ Instructors loaded successfully:', 'success');
+                    logOutput(JSON.stringify(data, null, 2), 'success');
+                    instructors = data.data || [];
+                    populateInstructorDropdowns();
+                } else {
+                    logOutput(`❌ Failed to fetch instructors: ${data.message}`, 'error');
+                }
+            } catch (error) {
+                logOutput(`❌ Error fetching instructors: ${error.message}`, 'error');
+            }
+        }
+
+        // Seed Database
+        async function seedDatabase() {
+            logOutput('🌱 Seeding database with sample data...', 'info');
+
+            const sampleCourses = [
+                {
+                    title: 'Complete JavaScript Mastery',
+                    description: 'Master JavaScript from basics to advanced concepts including ES6+, async programming, and DOM manipulation.',
+                    shortDescription: 'Learn JavaScript comprehensively',
+                    category: 'Web Development',
+                    level: 'intermediate',
+                    language: 'English',
+                    price: 99.99,
+                    discountPrice: 79.99,
+                    duration: 40,
+                    tags: ['javascript', 'programming', 'web-development'],
+                    isPublished: true,
+                    isFeatured: true
+                },
+                {
+                    title: 'React.js Complete Guide',
+                    description: 'Build modern web applications with React.js, including hooks, context, and state management.',
+                    shortDescription: 'Master React.js development',
+                    category: 'Web Development',
+                    level: 'intermediate',
+                    language: 'English',
+                    price: 129.99,
+                    discountPrice: 99.99,
+                    duration: 35,
+                    tags: ['react', 'javascript', 'frontend'],
+                    isPublished: true,
+                    isFeatured: false
+                },
+                {
+                    title: 'Python for Data Science',
+                    description: 'Learn Python programming specifically for data analysis, visualization, and machine learning.',
+                    shortDescription: 'Python for data analysis',
+                    category: 'Data Science',
+                    level: 'beginner',
+                    language: 'English',
+                    price: 89.99,
+                    discountPrice: 69.99,
+                    duration: 30,
+                    tags: ['python', 'data-science', 'machine-learning'],
+                    isPublished: true,
+                    isFeatured: true
+                }
+            ];
+
+            try {
+                // Get a random instructor if available
+                if (instructors.length === 0) {
+                    await loadInstructors();
+                }
+
+                const instructor = instructors.length > 0 ? instructors[0]._id : null;
+
+                for (const courseData of sampleCourses) {
+                    if (instructor) {
+                        courseData.instructor = instructor;
+                    }
+
+                    const response = await fetch(`${API_BASE}/courses`, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(courseData)
+                    });
+
+                    const result = await response.json();
+
+                    if (response.ok) {
+                        logOutput(`✅ Created course: ${courseData.title}`, 'success');
+                    } else {
+                        logOutput(`❌ Failed to create ${courseData.title}: ${result.message}`, 'error');
+                    }
+                }
+
+                logOutput('🎉 Database seeding completed!', 'success');
+                await getAllCourses(); // Refresh the courses display
+
+            } catch (error) {
+                logOutput(`❌ Seeding failed: ${error.message}`, 'error');
+            }
+        }
+
+        // Get All Courses
+        async function getAllCourses() {
+            logOutput('📚 Fetching all courses...', 'info');
+
+            try {
+                const response = await fetch(`${API_BASE}/courses`);
+                const data = await response.json();
+
+                if (response.ok) {
+                    courses = data.data || [];
+                    logOutput(`✅ Found ${courses.length} courses`, 'success');
+                    displayCourses(courses);
+
+                    if (courses.length > 0) {
+                        logOutput(JSON.stringify(courses, null, 2), 'success');
+                    } else {
+                        logOutput('💡 No courses found. Try seeding the database first.', 'warning');
+                    }
+                } else {
+                    logOutput(`❌ Failed to fetch courses: ${data.message}`, 'error');
+                }
+            } catch (error) {
+                logOutput(`❌ Error fetching courses: ${error.message}`, 'error');
+            }
+        }
+
+        // Display courses in cards
+        function displayCourses(coursesToDisplay) {
+            const display = document.getElementById('courses-display');
+
+            if (coursesToDisplay.length === 0) {
+                display.innerHTML = '<p>No courses to display. Try seeding the database first.</p>';
+                return;
+            }
+
+            display.innerHTML = coursesToDisplay.map(course => `
+                <div class="course-card">
+                    <div class="course-title">${course.title}</div>
+                    <div class="course-info">
+                        <div><strong>Instructor:</strong> ${course.instructor?.name || 'Not assigned'}</div>
+                        <div><strong>Category:</strong> ${course.category || 'N/A'}</div>
+                        <div><strong>Level:</strong> ${course.level || 'N/A'}</div>
+                        <div><strong>Price:</strong> $${course.price || 'Free'}</div>
+                        <div><strong>Duration:</strong> ${course.duration || 'N/A'} hours</div>
+                        <div><strong>Status:</strong> ${course.isPublished ? 'Published' : 'Draft'}</div>
+                    </div>
+                    <p><strong>Description:</strong> ${course.description || 'No description'}</p>
+                    <div class="course-actions">
+                        <button onclick="editCourse('${course._id}')">✏️ Edit</button>
+                        <button onclick="deleteCourse('${course._id}')" class="delete-btn">🗑️ Delete</button>
+                        <button onclick="getCourseById('${course._id}')">👁️ View Details</button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Get Course by ID
+        async function getCourseById(courseId = null) {
+            if (!courseId) {
+                courseId = prompt('Enter Course ID:');
+            }
+
+            if (!courseId) return;
+
+            logOutput(`🔍 Fetching course details for ID: ${courseId}`, 'info');
+
+            try {
+                const response = await fetch(`${API_BASE}/courses/${courseId}`);
+                const data = await response.json();
+
+                if (response.ok) {
+                    logOutput('✅ Course details:', 'success');
+                    logOutput(JSON.stringify(data.data, null, 2), 'success');
+                } else {
+                    logOutput(`❌ Failed to fetch course: ${data.message}`, 'error');
+                }
+            } catch (error) {
+                logOutput(`❌ Error fetching course: ${error.message}`, 'error');
+            }
+        }
+
+        function showCourseById() {
+            getCourseById();
+        }
+
+        // Create Course
+        document.getElementById('create-course-form').addEventListener('submit', async function (e) {
+            e.preventDefault();
+
+            const courseData = {
+                title: document.getElementById('title').value,
+                description: document.getElementById('description').value,
+                shortDescription: document.getElementById('shortDescription').value,
+                instructor: document.getElementById('instructor').value,
+                category: document.getElementById('category').value,
+                level: document.getElementById('level').value,
+                language: document.getElementById('language').value,
+                price: parseFloat(document.getElementById('price').value) || 0,
+                discountPrice: parseFloat(document.getElementById('discountPrice').value) || 0,
+                duration: parseInt(document.getElementById('duration').value) || 0,
+                tags: document.getElementById('tags').value.split(',').map(tag => tag.trim()).filter(tag => tag),
+                isPublished: document.getElementById('isPublished').checked,
+                isFeatured: document.getElementById('isFeatured').checked
+            };
+
+            // Remove empty fields
+            Object.keys(courseData).forEach(key => {
+                if (courseData[key] === '' || courseData[key] === 0) {
+                    delete courseData[key];
+                }
+            });
+
+            logOutput('📝 Creating new course...', 'info');
+            logOutput(`Course data: ${JSON.stringify(courseData, null, 2)}`, 'info');
+
+            try {
+                const response = await fetch(`${API_BASE}/courses`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(courseData)
+                });
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    logOutput('✅ Course created successfully!', 'success');
+                    logOutput(JSON.stringify(result, null, 2), 'success');
+
+                    // Reset form
+                    document.getElementById('create-course-form').reset();
+
+                    // Refresh courses display
+                    await getAllCourses();
+                } else {
+                    logOutput(`❌ Failed to create course: ${result.message}`, 'error');
+                    if (result.errors) {
+                        logOutput(`Validation errors: ${JSON.stringify(result.errors, null, 2)}`, 'error');
+                    }
+                }
+            } catch (error) {
+                logOutput(`❌ Error creating course: ${error.message}`, 'error');
+            }
+        });
+
+        // Edit Course
+        function editCourse(courseId) {
+            const course = courses.find(c => c._id === courseId);
+            if (!course) {
+                logOutput('❌ Course not found for editing', 'error');
+                return;
+            }
+
+            // Populate update form
+            document.getElementById('update-course-id').value = courseId;
+            document.getElementById('update-title').value = course.title;
+            document.getElementById('update-description').value = course.description || '';
+            document.getElementById('update-instructor').value = course.instructor?._id || '';
+            document.getElementById('update-price').value = course.price || '';
+            document.getElementById('update-level').value = course.level || '';
+
+            // Show modal
+            document.getElementById('updateModal').style.display = 'block';
+        }
+
+        // Update Course
+        document.getElementById('update-course-form').addEventListener('submit', async function (e) {
+            e.preventDefault();
+
+            const courseId = document.getElementById('update-course-id').value;
+            const updateData = {
+                title: document.getElementById('update-title').value,
+                description: document.getElementById('update-description').value,
+                instructor: document.getElementById('update-instructor').value,
+                price: parseFloat(document.getElementById('update-price').value) || undefined,
+                level: document.getElementById('update-level').value
+            };
+
+            // Remove empty fields
+            Object.keys(updateData).forEach(key => {
+                if (updateData[key] === '' || updateData[key] === undefined) {
+                    delete updateData[key];
+                }
+            });
+
+            logOutput(`✏️ Updating course ${courseId}...`, 'info');
+
+            try {
+                const response = await fetch(`${API_BASE}/courses/${courseId}`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(updateData)
+                });
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    logOutput('✅ Course updated successfully!', 'success');
+                    logOutput(JSON.stringify(result, null, 2), 'success');
+
+                    // Close modal
+                    document.getElementById('updateModal').style.display = 'none';
+
+                    // Refresh courses display
+                    await getAllCourses();
+                } else {
+                    logOutput(`❌ Failed to update course: ${result.message}`, 'error');
+                }
+            } catch (error) {
+                logOutput(`❌ Error updating course: ${error.message}`, 'error');
+            }
+        });
+
+        // Delete Course
+        async function deleteCourse(courseId) {
+            if (!confirm('Are you sure you want to delete this course? This action cannot be undone.')) {
+                return;
+            }
+
+            logOutput(`🗑️ Deleting course ${courseId}...`, 'info');
+
+            try {
+                const response = await fetch(`${API_BASE}/courses/${courseId}`, {
+                    method: 'DELETE'
+                });
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    logOutput('✅ Course deleted successfully!', 'success');
+                    await getAllCourses(); // Refresh the display
+                } else {
+                    logOutput(`❌ Failed to delete course: ${result.message}`, 'error');
+                }
+            } catch (error) {
+                logOutput(`❌ Error deleting course: ${error.message}`, 'error');
+            }
+        }
+
+        // Modal handling
+        document.querySelector('.close').addEventListener('click', function () {
+            document.getElementById('updateModal').style.display = 'none';
+        });
+
+        window.addEventListener('click', function (event) {
+            const modal = document.getElementById('updateModal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+
+        // Initialize on page load
+        window.addEventListener('load', function () {
+            logOutput('🚀 LMS Course Management System initialized', 'success');
+            checkApiStatus();
+        });
+    </script>
+</body>
+
+</html>

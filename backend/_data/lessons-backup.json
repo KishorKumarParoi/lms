@@ -1,0 +1,178 @@
+[
+  {
+    "_id": "507f1f77bcf86cd799439031",
+    "title": "Introduction to Web Development",
+    "description": "Get started with web development fundamentals and overview of the course structure.",
+    "course": "507f1f77bcf86cd799439021",
+    "section": "HTML & CSS Fundamentals",
+    "order": 1,
+    "type": "video",
+    "content": {
+      "video": {
+        "public_id": "lesson1_video",
+        "url": "https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4",
+        "duration": 900,
+        "thumbnail": {
+          "public_id": "lesson1_thumb",
+          "url": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400"
+        }
+      }
+    },
+    "resources": [
+      {
+        "title": "Course Resources",
+        "url": "https://example.com/resources.pdf",
+        "type": "pdf"
+      },
+      {
+        "title": "Code Examples",
+        "url": "https://github.com/example/web-dev-intro",
+        "type": "link"
+      }
+    ],
+    "isPreview": true,
+    "isFree": true,
+    "isPublished": true,
+    "publishedAt": "2024-01-15T10:00:00.000Z"
+  },
+  {
+    "_id": "507f1f77bcf86cd799439032",
+    "title": "HTML Basics and Structure",
+    "description": "Learn HTML fundamentals, tags, and document structure.",
+    "course": "507f1f77bcf86cd799439021",
+    "section": "HTML & CSS Fundamentals",
+    "order": 2,
+    "type": "video",
+    "content": {
+      "video": {
+        "public_id": "lesson2_video",
+        "url": "https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_2mb.mp4",
+        "duration": 1200,
+        "thumbnail": {
+          "public_id": "lesson2_thumb",
+          "url": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400"
+        }
+      }
+    },
+    "resources": [
+      {
+        "title": "HTML Cheat Sheet",
+        "url": "https://example.com/html-cheatsheet.pdf",
+        "type": "pdf"
+      }
+    ],
+    "isPreview": false,
+    "isFree": false,
+    "isPublished": true,
+    "publishedAt": "2024-01-15T10:30:00.000Z"
+  },
+  {
+    "_id": "507f1f77bcf86cd799439033",
+    "title": "CSS Styling and Layouts",
+    "description": "Master CSS for styling web pages and creating responsive layouts.",
+    "course": "507f1f77bcf86cd799439021",
+    "section": "HTML & CSS Fundamentals",
+    "order": 3,
+    "type": "video",
+    "content": {
+      "video": {
+        "public_id": "lesson3_video",
+        "url": "https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4",
+        "duration": 1500,
+        "thumbnail": {
+          "public_id": "lesson3_thumb",
+          "url": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400"
+        }
+      }
+    },
+    "resources": [
+      {
+        "title": "CSS Grid Guide",
+        "url": "https://example.com/css-grid.pdf",
+        "type": "pdf"
+      }
+    ],
+    "isPreview": false,
+    "isFree": false,
+    "isPublished": true,
+    "publishedAt": "2024-01-15T11:00:00.000Z"
+  },
+  {
+    "_id": "507f1f77bcf86cd799439034",
+    "title": "JavaScript Fundamentals",
+    "description": "Learn JavaScript basics including variables, functions, and control structures.",
+    "course": "507f1f77bcf86cd799439021",
+    "section": "JavaScript Essentials",
+    "order": 1,
+    "type": "video",
+    "content": {
+      "video": {
+        "public_id": "lesson4_video",
+        "url": "https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_2mb.mp4",
+        "duration": 1800,
+        "thumbnail": {
+          "public_id": "lesson4_thumb",
+          "url": "https://images.unsplash.com/photo-1579468118864-1b9ea3c0db4a?w=400"
+        }
+      }
+    },
+    "resources": [
+      {
+        "title": "JavaScript Reference",
+        "url": "https://example.com/js-reference.pdf",
+        "type": "pdf"
+      }
+    ],
+    "quiz": {
+      "questions": [
+        {
+          "question": "What is the correct way to declare a variable in JavaScript?",
+          "options": [
+            "var myVar;",
+            "variable myVar;",
+            "declare myVar;",
+            "def myVar;"
+          ],
+          "correctAnswer": 0
+        }
+      ],
+      "passingScore": 80,
+      "timeLimit": 600
+    },
+    "isPreview": true,
+    "isFree": false,
+    "isPublished": true,
+    "publishedAt": "2024-01-16T10:00:00.000Z"
+  },
+  {
+    "_id": "507f1f77bcf86cd799439035",
+    "title": "Introduction to Data Science",
+    "description": "Overview of data science, its applications, and the tools we'll use throughout the course.",
+    "course": "507f1f77bcf86cd799439022",
+    "section": "Python for Data Science",
+    "order": 1,
+    "type": "video",
+    "content": {
+      "video": {
+        "public_id": "lesson5_video",
+        "url": "https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4",
+        "duration": 1200,
+        "thumbnail": {
+          "public_id": "lesson5_thumb",
+          "url": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400"
+        }
+      }
+    },
+    "resources": [
+      {
+        "title": "Data Science Roadmap",
+        "url": "https://example.com/ds-roadmap.pdf",
+        "type": "pdf"
+      }
+    ],
+    "isPreview": true,
+    "isFree": true,
+    "isPublished": true,
+    "publishedAt": "2024-02-01T10:00:00.000Z"
+  }
+]

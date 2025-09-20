@@ -1,0 +1,122 @@
+[
+  {
+    "_id": "507f1f77bcf86cd799439041",
+    "title": "Build Your First Website",
+    "description": "Create a personal portfolio website using HTML and CSS to showcase your skills.",
+    "instructions": "Create a responsive personal portfolio website with the following requirements:\n\n1. Use semantic HTML5 elements\n2. Include a header with navigation\n3. Add sections for About, Projects, and Contact\n4. Style with CSS (no frameworks allowed)\n5. Make it responsive for mobile devices\n6. Include at least 3 placeholder projects\n7. Add a contact form\n\nSubmit your HTML and CSS files along with screenshots of your website.",
+    "course": "507f1f77bcf86cd799439021",
+    "lesson": "507f1f77bcf86cd799439033",
+    "instructor": "507f1f77bcf86cd799439012",
+    "type": "individual",
+    "submissionFormat": "both",
+    "maxFileSize": 10,
+    "allowedFileTypes": [".html", ".css", ".png", ".jpg", ".jpeg"],
+    "maxFiles": 10,
+    "dueDate": "2024-03-15T23:59:59.000Z",
+    "totalPoints": 100,
+    "rubric": [
+      {
+        "criteria": "HTML Structure and Semantics",
+        "maxPoints": 25,
+        "description": "Proper use of semantic HTML5 elements and clean structure"
+      },
+      {
+        "criteria": "CSS Styling and Layout",
+        "maxPoints": 30,
+        "description": "Effective use of CSS for styling and responsive layout"
+      },
+      {
+        "criteria": "Content and Design",
+        "maxPoints": 25,
+        "description": "Quality of content and overall design aesthetics"
+      },
+      {
+        "criteria": "Responsiveness",
+        "maxPoints": 20,
+        "description": "Website works well on different screen sizes"
+      }
+    ],
+    "isPublished": true,
+    "publishedAt": "2024-01-20T10:00:00.000Z"
+  },
+  {
+    "_id": "507f1f77bcf86cd799439042",
+    "title": "JavaScript Calculator Project",
+    "description": "Build a functional calculator using HTML, CSS, and JavaScript with advanced operations.",
+    "instructions": "Create a calculator web application with the following features:\n\n1. Basic operations: +, -, *, /\n2. Advanced operations: %, √, x²\n3. Clear and backspace functionality\n4. Keyboard support\n5. Handle edge cases (division by zero, etc.)\n6. Clean, modern UI design\n7. Error handling and validation\n\nRequirements:\n- Use vanilla JavaScript (no libraries)\n- Implement proper error handling\n- Include comprehensive comments in your code\n- Test all functionality thoroughly\n\nSubmit your complete project files and a demo video.",
+    "course": "507f1f77bcf86cd799439021",
+    "lesson": "507f1f77bcf86cd799439034",
+    "instructor": "507f1f77bcf86cd799439012",
+    "type": "individual",
+    "submissionFormat": "both",
+    "maxFileSize": 15,
+    "allowedFileTypes": [".html", ".css", ".js", ".mp4", ".mov"],
+    "maxFiles": 8,
+    "dueDate": "2024-04-01T23:59:59.000Z",
+    "totalPoints": 150,
+    "rubric": [
+      {
+        "criteria": "Functionality",
+        "maxPoints": 50,
+        "description": "All calculator operations work correctly"
+      },
+      {
+        "criteria": "Code Quality",
+        "maxPoints": 40,
+        "description": "Clean, well-commented, and organized code"
+      },
+      {
+        "criteria": "User Interface",
+        "maxPoints": 30,
+        "description": "Attractive and user-friendly design"
+      },
+      {
+        "criteria": "Error Handling",
+        "maxPoints": 30,
+        "description": "Proper handling of edge cases and errors"
+      }
+    ],
+    "isPublished": true,
+    "publishedAt": "2024-01-25T10:00:00.000Z"
+  },
+  {
+    "_id": "507f1f77bcf86cd799439043",
+    "title": "Data Analysis Project",
+    "description": "Perform comprehensive data analysis on a real-world dataset using Python and pandas.",
+    "instructions": "Choose one of the provided datasets and perform a complete data analysis:\n\nDataset Options:\n1. Sales data from an e-commerce company\n2. Student performance in various subjects\n3. Weather patterns over 10 years\n4. Stock market data for tech companies\n\nRequired Analysis:\n1. Data cleaning and preprocessing\n2. Exploratory data analysis (EDA)\n3. Statistical summary and insights\n4. Data visualizations (minimum 5 charts)\n5. Correlation analysis\n6. Conclusions and recommendations\n\nDeliverables:\n- Jupyter notebook with complete analysis\n- PDF report summarizing findings\n- Presentation slides (max 10 slides)\n\nUse pandas, matplotlib, seaborn, and numpy libraries.",
+    "course": "507f1f77bcf86cd799439022",
+    "lesson": "507f1f77bcf86cd799439035",
+    "instructor": "507f1f77bcf86cd799439013",
+    "type": "individual",
+    "submissionFormat": "both",
+    "maxFileSize": 50,
+    "allowedFileTypes": [".ipynb", ".pdf", ".pptx", ".png", ".jpg"],
+    "maxFiles": 15,
+    "dueDate": "2024-03-30T23:59:59.000Z",
+    "totalPoints": 200,
+    "rubric": [
+      {
+        "criteria": "Data Cleaning and Preprocessing",
+        "maxPoints": 40,
+        "description": "Effective handling of missing values, outliers, and data preparation"
+      },
+      {
+        "criteria": "Exploratory Data Analysis",
+        "maxPoints": 60,
+        "description": "Thorough exploration of data patterns and relationships"
+      },
+      {
+        "criteria": "Visualizations",
+        "maxPoints": 50,
+        "description": "Clear, informative, and well-designed charts and graphs"
+      },
+      {
+        "criteria": "Insights and Conclusions",
+        "maxPoints": 50,
+        "description": "Meaningful insights and actionable recommendations"
+      }
+    ],
+    "isPublished": true,
+    "publishedAt": "2024-02-10T10:00:00.000Z"
+  }
+]
